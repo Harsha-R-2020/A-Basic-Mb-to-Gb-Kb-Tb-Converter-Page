@@ -1,0 +1,83 @@
+<!--A Simple Mb to Gb,Tb,Kb converter Done by Harsha R-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+  content="ie=edge">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <style>
+  body{
+    margin-top: 70px;
+    background: #333;
+    color: #fff;
+  }
+  </style>
+
+  <title>Megabyte Convertor</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-4 text-center mb-3"> Mb --> Gb,Tb,Kb Converter</h1>
+        <form>
+          <div class="form-group">
+            <input id="mbInput" type="number"
+            class="form-control form-control-lg mb-3"
+            placeholder="Enter Size in MegaBytes(MB)....">
+
+            <div>
+            <input id="btn1" value="Go" type="button" name="Go" color="black"  class="btn button-danger offset-md-5 mb-1"/>
+            </div>
+          </div>
+        </form>
+
+        <div id="output">
+
+          <div class="card card-primary mb-2">
+            <div class="card-block">
+              <h4>In Giga-Byte (Gb): </h4>
+              <div id="gbOutput"></div>
+            </div>
+          </div>
+
+          <div class="card card-success mb-2">
+            <div class="card-block">
+              <h4>In Tera-Byte (Tb) : </h4>
+              <div id="tbOutput"></div>
+            </div>
+          </div>
+
+          <div class="card card-danger mb-2">
+            <div class="card-block">
+              <h4>In Kilo-Byte (Kb): </h4>
+              <div id="kbOutput"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>                                              
+    </div>
+  </div>
+<script>
+
+document.getElementById('mbInput').addEventListener('input',
+function(e){
+  let m = e.target.value;
+  document.getElementById('btn1').addEventListener('click',function(){
+  document.getElementById('gbOutput').innerHTML= (m*0.0009765625).toFixed(10);
+  document.getElementById('tbOutput').innerHTML = (m*0.00000095367431640625).toFixed(20);
+  document.getElementById('kbOutput').innerHTML= (m*1024).toFixed(0);
+  });
+});
+
+</script>
+</body>
+</html>
